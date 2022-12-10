@@ -82,3 +82,36 @@ footer {
     margin: 0;
     border: 0;
 }
+
+.flex-container-ver{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    align-items: center;
+}
+
+.flex-container-ver > div {
+    background-color: antiquewhite;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+}
+
+.flex-container-hor{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(63, 63, 63);
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-container-hor > div {
+    background-color: antiquewhite;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+}
