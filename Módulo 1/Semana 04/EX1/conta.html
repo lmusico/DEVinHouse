@@ -4,24 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./conta.js"></script>
+    <script src="./conta.js" async></script>
     <link rel="stylesheet" href="conta.css">
     <title>Meu Primeiro Banco</title>
 </head>
 <body>
     <h1>Meu Primeiro Banco</h1>
     <h2>Dando voz ao seu dinheiro</h2>
-    <form>
+    <form id="cadastro">
         <label>Digite seu nome</label><br>
-        <input placeholder="Nome completo" type="text"><br>
+        <input required id="nome" placeholder="Nome completo" type="text"><br>
+        <label>Digite seu número de celular</label><br>
+        <input required id="celular" placeholder="Celular" type="text"><br>
         <label>Digite seu CPF</label><br>
-        <input placeholder="CPF" type="text"><br>
+        <input required id="cpf" placeholder="CPF" type="text"><br>
         <label>Digite sua senha</label><br>
-        <input placeholder="Senha" type="password"><br>
+        <input required id="senha" placeholder="Senha" type="text"><br>
         <label>Confirme sua senha</label><br>
-        <input placeholder="Senha" type="password"><br>
+        <input required id="senhac" placeholder="Senha" type="text"><br>
         <button type="submit">Enviar</button>
         <button type="reset">Resetar</button>
+    </form>
+    <div id="avisos"></div>
+    <h3>Operações bancárias</h3>
+    <form id="consulta">
+        <label>Digite sua conta</label><br>
+        <input required id="conta" placeholder="Conta" type="text"><br>
+        <label>Qual a operação desejada?</label><br>
+        <select required id="operacao">
+            <option disabled>Selecione operação</option>
+            <option value="0">Saque</option>
+            <option value="1">Depósito</option>
+            <option value="2">Consulta Saldo</option>
+        </select><br>
+        <label>Valor</label><br>
+        <input id="valor" placeholder="Valor" type="number" min="0" value="0"><br>
+        <label>Digite sua senha</label><br>
+        <input required id="senha" placeholder="Senha" type="text"><br>
+        <button type="submit">Confirma</button>
+        <button type="reset">Limpar</button>
     </form>
 </body>
 </html>
