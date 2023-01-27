@@ -29,7 +29,6 @@ formulario.onsubmit = (event) => {
     }
 }
 const valor = document.getElementById("valor");
-
 const desabilitaValor = document.getElementById("operacao");
 desabilitaValor.onchange = (event) =>{
     if (desabilitaValor.value == 2){
@@ -60,6 +59,7 @@ operacoes.onsubmit = (event) => {
             if (contavalida){
                 if (contas[n].senha == senhaop){
                     senhavalida = true;
+                    var contaoperacao = contas[n]
                 }
             }
             break
@@ -85,7 +85,7 @@ operacoes.onsubmit = (event) => {
                 deposito();
                 break
             case "2":
-                saldo();
+                saldo(contaoperacao);
                 break
         }
     }
@@ -100,6 +100,7 @@ const deposito = () => {
     console.log("Função depósito");
 };
 
-const saldo = () => {
+const saldo = (conta) => {
+    window.alert(`Conta: ${conta.id}\nSaldo: ${conta.saldo}\nConsulta realizada: ${new Date()}`)
     console.log("Função saldo");
 };
