@@ -1,4 +1,4 @@
-var contas = []
+const contas = []
 
 const formulario = document.getElementById("cadastro");
 formulario.onsubmit = (event) => {
@@ -38,7 +38,68 @@ desabilitaValor.onchange = (event) =>{
     else{
         valor.disabled = false;
     }
-}
+};
 
 
+// Validação dasa operações bancárias
+const operacoes = document.getElementById("operacoes");
+operacoes.onsubmit = (event) => {
+    event.preventDefault();
+    let contavalida = false;
+    let senhavalida = false;
+    let validacao = false;
+    const conta = document.getElementById("conta").value;
+    const operacao = document.getElementById("operacao").value;
+    const senhaop = document.getElementById("senhaop").value;
+    const valor = document.getElementById("valor").value;
+    for (let n in contas){
+        // console.log(contas[n].id);
+        // console.log("conta digitada:", conta);
+        if (contas[n].id == conta){
+            contavalida = true;
+            if (contavalida){
+                if (contas[n].senha == senhaop){
+                    senhavalida = true;
+                }
+            }
+            break
+        }
+    }
+    if (contavalida == false){
+        window.alert("Número de conta inválida.")
+    }
+    else if (!senhavalida){
+        window.alert("Senha inválida.")
+    }
+    else {
+        window.alert("Número de conta e senha validados com sucesso!")
+        validacao = true;
+    }
 
+    if (validacao){
+        switch (operacao){
+            case "0":
+                saque();
+                break
+            case "1":
+                deposito();
+                break
+            case "2":
+                saldo();
+                break
+        }
+    }
+};
+
+// Funções das operações
+const saque = () => {
+    console.log("Função saque");
+};
+
+const deposito = () => {
+    console.log("Função depósito");
+};
+
+const saldo = () => {
+    console.log("Função saldo");
+};
