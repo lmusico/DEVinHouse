@@ -50,7 +50,7 @@ operacoes.onsubmit = (event) => {
     const conta = document.getElementById("conta").value;
     const operacao = document.getElementById("operacao").value;
     const senhaop = document.getElementById("senhaop").value;
-    const valor = document.getElementById("valor").value;
+    const valor = parseInt(document.getElementById("valor").value);
     for (let n in contas){
         // console.log(contas[n].id);
         // console.log("conta digitada:", conta);
@@ -59,7 +59,7 @@ operacoes.onsubmit = (event) => {
             if (contavalida){
                 if (contas[n].senha == senhaop){
                     senhavalida = true;
-                    var contaoperacao = contas[n]
+                    var contaN = n
                 }
             }
             break
@@ -79,13 +79,13 @@ operacoes.onsubmit = (event) => {
     if (validacao){
         switch (operacao){
             case "0":
-                saque();
+                saque(contaN);
                 break
             case "1":
-                deposito();
+                deposito(contaN, valor);
                 break
             case "2":
-                saldo(contaoperacao);
+                saldo(contaN);
                 break
         }
     }
@@ -96,11 +96,21 @@ const saque = () => {
     console.log("Função saque");
 };
 
-const deposito = () => {
+const deposito = (conta, valor) => {
+    const saldo = contas[conta].saldo;
+    contas[conta].saldo += valor;
+    window.alert(`Depósito realizado com sucesso!\n
+Saldo anterior: R$ ${saldo}\n
+Valor do depósito: R$ ${valor}\n
+Saldo atual: R$ ${contas[conta].saldo}\n
+Depósito realizado: ${new Date()}`)
     console.log("Função depósito");
 };
 
 const saldo = (conta) => {
-    window.alert(`Conta: ${conta.id}\nSaldo: ${conta.saldo}\nConsulta realizada: ${new Date()}`)
+    window.alert(`
+Conta: ${contas[conta].id}\n
+Saldo: R$ ${contas[conta].saldo}\n
+Consulta realizada: ${new Date()}`)
     console.log("Função saldo");
 };
