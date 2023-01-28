@@ -39,6 +39,11 @@ desabilitaValor.onchange = (event) =>{
     }
 };
 
+valor.onchange = (event) =>{
+    if (valor.value < 0){
+        valor.value = 0;
+    }
+}
 
 // Validação dasa operações bancárias
 const operacoes = document.getElementById("operacoes");
@@ -79,7 +84,7 @@ operacoes.onsubmit = (event) => {
     if (validacao){
         switch (operacao){
             case "0":
-                saque(contaN);
+                saque(contaN, valor);
                 break
             case "1":
                 deposito(contaN, valor);
@@ -92,7 +97,19 @@ operacoes.onsubmit = (event) => {
 };
 
 // Funções das operações
-const saque = () => {
+const saque = (conta, valor) => {
+    if (contas[conta].saldo<valor){
+        window.alert(`Saldo insuficiente para o saque.\n\nSaldo disponível: R$ ${contas[conta].saldo}`)
+    }
+    else{
+        const saldo = contas[conta].saldo;
+        contas[conta].saldo -= valor;
+        window.alert(`Saque realizado com sucesso!\n
+Saldo anterior: R$ ${saldo}\n
+Valor do saque: R$ ${valor}\n
+Saldo atual: R$ ${contas[conta].saldo}\n
+Saque realizado: ${new Date()}`);
+    }
     console.log("Função saque");
 };
 
