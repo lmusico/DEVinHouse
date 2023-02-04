@@ -19,15 +19,15 @@ export default class Time{
             switch (Math.sign(saldo)) {
                 case 1:
                     // console.log("Vitória");
-                    this.vitorias++
+                    this.vitorias++;
                     break;
                 case 0:
                     // console.log("Empate");
-                    this.empates++
+                    this.empates++;
                     break
                 case -1:
                     // console.log("Derrota");
-                    this.derrotas++
+                    this.derrotas++;
                 default:
                     break;
             }
@@ -66,7 +66,7 @@ export default class Time{
     }
     
     get numeroDeJogos(){
-        return this.vitorias + this.derrotas
+        return this.vitorias + this.derrotas + this.empates
     }
 
     get numeroDePontos(){
