@@ -2,8 +2,7 @@ const time = () => {
     
     setInterval(() => {
         const t = new Date();
-        setTimeout(()=>clearInterval(), 5000);
-        console.log(t.getHours(),":",t.getMinutes(),":",t.getSeconds());
+        console.log(t.toLocaleTimeString());
     }, 1000);
     
 }
