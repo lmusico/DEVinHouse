@@ -40,7 +40,7 @@ desabilitaValor.onchange = (event) =>{
 };
 
 valor.onchange = (event) =>{
-    if (valor.value < 0){
+    if (valor.value < 0 || isNaN(valor.value)){
         valor.value = 0;
     }
 }
