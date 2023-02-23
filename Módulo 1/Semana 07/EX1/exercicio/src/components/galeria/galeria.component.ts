@@ -10,6 +10,8 @@ export class GaleriaComponent {
   public title = "Galeria de Imagens";
   @Input() public fotos: string[] = [];
 
+  public legenda = ["Bulbassauro", "Charmander", "Pikachu", "Pokebola", "Snorlax"];
+
   public fotoAtual = 0;
 
   public voltarParaPrimeira () {

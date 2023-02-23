@@ -3,13 +3,15 @@
         {{ title }}
     </h3>
     <div *ngIf="fotos.length > 0">
-        <img [src]="fotos[fotoAtual]" >
+        <img [src]="fotos[fotoAtual]" style="width: 20rem;">
 
         <div>
             Foto {{fotoAtual + 1}} de {{fotos.length}}
+            <br>
+            <p>{{legenda[fotoAtual]}}</p>
             <button (click)="voltarParaPrimeira()">|<</button>
-            <button (click)="fotoAnterior()"><</button>
-            <button (click)="proximaFoto()">></button>
+            <button (click)="fotoAnterior()"[disabled]="fotoAtual == 0 ? true : null"><</button>
+            <button (click)="proximaFoto()"[disabled]="fotoAtual == fotos.length-1 ? true : null">></button>
             <button (click)="vaiParaUltima()">>|</button>
         </div>
     </div>
