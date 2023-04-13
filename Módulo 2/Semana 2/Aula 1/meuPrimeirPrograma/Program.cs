@@ -4,6 +4,7 @@
     {
         // Variáveis
         String? nome; // tipo de dado texto
+        int idade;
 
         // Mensagens instrucionais ao usuário
         Console.WriteLine("Olá mundo! Digite o seu nome: ");
@@ -12,7 +13,11 @@
         nome = Console.ReadLine(); // Aguardando o usuário digitar
 
         // Saídas: mostrar resultados em tela
-        Console.WriteLine("Olá " + nome + "! Sejá bem bindo ao C#!");
+        Console.WriteLine("Olá " + nome + "! Sejá bem Vindo ao C#! Digite sua idade?");
+        idade = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Sua idade é: " + idade);
+
 
 
     }
