@@ -60,6 +60,7 @@
                             b = int.Parse(Console.ReadLine());
                             Console.WriteLine("O resultado é: " + (a * b));
                             break;
+                            
                         case "Divisão (/)":
                             Console.WriteLine("Entre com dois números para a operação:");
                             a = int.Parse(Console.ReadLine());
