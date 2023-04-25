@@ -2,19 +2,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ProprietarioSpace;
 
 namespace CarroSpace
 {
     public class Carro
     {
-        string marca;
+        public string marca;
 
-        string modelo;
+        public string modelo;
 
-        string placa;
+        public string placa;
 
-        string cor;
+        public string cor;
 
-        string proprietario;
+        public Proprietario proprietario;
     }
 }

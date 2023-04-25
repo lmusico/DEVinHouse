@@ -1,8 +1,12 @@
 ﻿using ProprietarioSpace;
+using CarroSpace;
 
 var proprietario1 = new Proprietario();
 var proprietario2 = new Proprietario();
 var proprietario3 = new Proprietario();
+var carro1 = new Carro();
+var carro2 = new Carro();
+var carro3 = new Carro();
 
 proprietario1.nome = "Borion";
 
@@ -22,4 +26,8 @@ proprietario2.telefone = "321456";
 
 proprietario3.telefone = "123123";
 
+carro1.proprietario = proprietario1;
 
+carro2.proprietario = proprietario2;
+
+carro3.proprietario = proprietario3;

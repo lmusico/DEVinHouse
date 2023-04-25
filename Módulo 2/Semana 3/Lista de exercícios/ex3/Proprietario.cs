@@ -7,10 +7,10 @@ namespace ProprietarioSpace
 {
     public class Proprietario
     {
-        public string nome;
+        public string nome {get; set;}
 
-        public string cpf;
+        public string cpf {get; set;}
 
-        public string telefone;
+        public string telefone {get; set;}
     }
 }
