@@ -39,3 +39,45 @@ listaDeCarros.Add(carro2);
 
 listaDeCarros.Add(carro3);
 
+CadastraCarros();
+
+void CadastraCarros()
+{
+    Carro carro = new Carro();
+
+    Console.WriteLine("Bem vindo ao método de cadastro de carros. Entre com as seguintes informações:");
+
+    Console.Write("Marca:");
+    carro.marca = Console.ReadLine();
+
+    Console.Write("Modelo:");
+    carro.modelo = Console.ReadLine();
+
+    Console.Write("Placa:");
+    carro.placa = Console.ReadLine();
+
+    Console.Write("Cor:");
+    carro.cor = Console.ReadLine();
+
+    Console.Write("Nome:");
+    string nome = Console.ReadLine();
+
+    Console.Write("CPF:");
+    string cpf = Console.ReadLine();
+
+    Console.Write("Telefone:");
+    string telefone = Console.ReadLine();
+
+    Proprietario proprietario = new Proprietario();
+    proprietario.nome = nome;
+    proprietario.cpf = cpf;
+    proprietario.telefone = telefone;
+
+
+    carro.proprietario = proprietario;
+
+    listaDeCarros.Add(carro);
+
+}
+
+
