@@ -7,6 +7,7 @@ var proprietario3 = new Proprietario();
 var carro1 = new Carro();
 var carro2 = new Carro();
 var carro3 = new Carro();
+List<Carro> listaDeCarros = new List<Carro>();
 
 proprietario1.nome = "Borion";
 
@@ -31,3 +32,10 @@ carro1.proprietario = proprietario1;
 carro2.proprietario = proprietario2;
 
 carro3.proprietario = proprietario3;
+
+listaDeCarros.Add(carro1);
+
+listaDeCarros.Add(carro2);
+
+listaDeCarros.Add(carro3);
+
