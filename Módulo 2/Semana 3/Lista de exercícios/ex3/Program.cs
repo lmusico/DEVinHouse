@@ -41,6 +41,8 @@ listaDeCarros.Add(carro3);
 
 CadastraCarros();
 
+ListarCarros();
+
 void CadastraCarros()
 {
     Carro carro = new Carro();
@@ -79,5 +81,22 @@ void CadastraCarros()
     listaDeCarros.Add(carro);
 
 }
+
+void ListarCarros()
+{
+    foreach (var carro in listaDeCarros)
+    {
+        Console.WriteLine("\n----------------\n");
+        Console.WriteLine("Marca:" + carro.marca);
+        Console.WriteLine("Modelo:" + carro.modelo);
+        Console.WriteLine("Placa:" + carro.placa);
+        Console.WriteLine("Cor:" + carro.cor);
+        Console.WriteLine("Dados do proprietario:\nNome:" + carro.proprietario.nome);
+        Console.WriteLine("CPF:" + carro.proprietario.cpf);
+        Console.WriteLine("Telefone:" + carro.proprietario.telefone);
+    }
+}
+
+
 
 
