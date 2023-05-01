@@ -1,4 +1,5 @@
-﻿using ProprietarioSpace;
+﻿using System.Linq.Expressions;
+using ProprietarioSpace;
 using CarroSpace;
 
 var proprietario1 = new Proprietario();
@@ -7,41 +8,63 @@ var proprietario3 = new Proprietario();
 var carro1 = new Carro();
 var carro2 = new Carro();
 var carro3 = new Carro();
+
+string opcao = "0";
+
 List<Carro> listaDeCarros = new List<Carro>();
 
-proprietario1.nome = "Borion";
+// proprietario1.nome = "Borion";
 
-proprietario2.nome = "Giborn";
+// proprietario2.nome = "Giborn";
 
-proprietario3.nome = "Dagusdir";
+// proprietario3.nome = "Dagusdir";
 
-proprietario1.cpf = "749.132.440-19";
+// proprietario1.cpf = "749.132.440-19";
 
-proprietario2.cpf = "858.316.640-40";
+// proprietario2.cpf = "858.316.640-40";
 
-proprietario3.cpf = "399.105.240-74";
+// proprietario3.cpf = "399.105.240-74";
 
-proprietario1.telefone = "123456";
+// proprietario1.telefone = "123456";
 
-proprietario2.telefone = "321456";
+// proprietario2.telefone = "321456";
 
-proprietario3.telefone = "123123";
+// proprietario3.telefone = "123123";
 
-carro1.proprietario = proprietario1;
+// carro1.proprietario = proprietario1;
 
-carro2.proprietario = proprietario2;
+// carro2.proprietario = proprietario2;
 
-carro3.proprietario = proprietario3;
+// carro3.proprietario = proprietario3;
 
-listaDeCarros.Add(carro1);
+// listaDeCarros.Add(carro1);
 
-listaDeCarros.Add(carro2);
+// listaDeCarros.Add(carro2);
 
-listaDeCarros.Add(carro3);
+// listaDeCarros.Add(carro3);
 
-CadastraCarros();
 
-ListarCarros();
+while (opcao != "3"){
+    Console.WriteLine("Bem vindo ao sistema de controle de carros. Digite a opção desejada:\n1 - Cadastrar carro\n2 - Consultar carro\n3 - Sair");
+    opcao = Console.ReadLine();
+    switch (opcao)
+    {
+        case "1":
+        CadastraCarros();
+        break;
+        case "2":
+        ListarCarros();
+        break;
+        default:
+        Console.WriteLine("Opção inválida. As opções são:\n1 - Cadastrar carro\n2 - Consultar carro\n3 - Sair");
+        break;
+    }
+
+}
+
+// CadastraCarros();
+
+// ListarCarros();
 
 void CadastraCarros()
 {
@@ -61,13 +84,13 @@ void CadastraCarros()
     Console.Write("Cor:");
     carro.cor = Console.ReadLine();
 
-    Console.Write("Nome:");
+    Console.Write("Nome do proprietário:");
     string nome = Console.ReadLine();
 
-    Console.Write("CPF:");
+    Console.Write("CPF do proprietário:");
     string cpf = Console.ReadLine();
 
-    Console.Write("Telefone:");
+    Console.Write("Telefone do proprietário:");
     string telefone = Console.ReadLine();
 
     Proprietario proprietario = new Proprietario();
