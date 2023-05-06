@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FullStackBanck.Models
+namespace FullStackBank.Models
 {
     public abstract class Cliente
     {
