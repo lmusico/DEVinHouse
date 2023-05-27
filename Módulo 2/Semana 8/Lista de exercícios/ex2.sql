@@ -11,9 +11,9 @@ CREATE TABLE Avaliacoes (
 id INT PRIMARY KEY IDENTITY (1,1),
 produto_id INT NOT NULL,
 cliente_id INT NOT NULL,
-comentário INT NOT NULL,
+comentario INT NOT NULL,
 estrelas INT CHECK (estrelas >= 0 AND estrelas <= 5) NOT NULL ,
-data_avaliacao INT NOT NULL,
+data_avaliacao VARCHAR(10) NOT NULL,
 FOREIGN KEY(cliente_id) REFERENCES Clientes(id),
 FOREIGN KEY(produto_id) REFERENCES Produtos(id)
 )
@@ -42,8 +42,8 @@ FOREIGN KEY(pagamento_id) REFERENCES Pagamento(id)
 CREATE TABLE Pagamento(
 id INT PRIMARY KEY IDENTITY (1,1),
 cliente_id INT NOT NULL,
-numeroCartao INT NOT NULL,
-validade DATE NOT NULL,
+numeroCartao BIGINT NOT NULL,
+validade VARCHAR(10) NOT NULL,
 codigo INT CHECK (codigo >= 0 AND codigo <= 999),
 FOREIGN KEY(cliente_id) REFERENCES Clientes(id),
 )
