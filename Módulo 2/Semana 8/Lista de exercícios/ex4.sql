@@ -1,0 +1,2 @@
+SELECT TOP 2 * FROM Produtos
+ORDER BY vendas DESC
